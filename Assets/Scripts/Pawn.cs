@@ -13,6 +13,7 @@ public class Pawn : MonoBehaviour
     [SerializeField] private float sheilds = 100f;
     [Tooltip("Amount of Energy/Power the player has.")]
     [SerializeField] private protected float power;
+    [SerializeField] private protected int ammo, ammoReserves;
 
     [SerializeField] private protected Transform firePoint;
     [SerializeField]
@@ -46,8 +47,14 @@ public class Pawn : MonoBehaviour
     public void Shoot(GameObject projectile)
     {
         // Instaniates the projectile at the firepoint postion facing the same way as the fire point.
-        Instantiate(projectile, firePoint.position, firePoint.rotation);
+        GameObject newBullet = Instantiate(projectile, firePoint.position, firePoint.rotation);
+        newBullet.GetComponent<Bullet>().shooter = this.gameObject;
         // Play sound.
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
     }
 
 }
