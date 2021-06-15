@@ -110,7 +110,7 @@ MonoBehaviour:
   lifeSpan: 10
   shooter: {fileID: 0}
   rgbd: {fileID: 8836609235931277702}
-  projectileForce: 100
+  projectileForce: 500
 --- !u!54 &8836609235931277702
 Rigidbody:
   m_ObjectHideFlags: 0
