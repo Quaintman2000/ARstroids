@@ -14,4 +14,13 @@ public class Bullet : Projectile
 
         rgbd.AddForce(transform.forward * projectileForce);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Health>() != null)
+        {
+            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+        }
+        Destroy(this.gameObject);
+    }
 }

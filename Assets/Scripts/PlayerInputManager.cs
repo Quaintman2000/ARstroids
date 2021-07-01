@@ -15,10 +15,6 @@ public class PlayerInputManager : Pawn
     {
         // Keeps track of all the inputs.
         // On mouse click...
-        if(Input.GetMouseButtonDown(0))
-        {
-            // Shoots bullet prefabs.
-            Shoot(projectile: bulletPrefab);
-        }
+       
     }
 }

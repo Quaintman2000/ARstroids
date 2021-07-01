@@ -42,7 +42,8 @@ GameObject:
   - component: {fileID: 6003274388656652089}
   - component: {fileID: 6003274388656652088}
   - component: {fileID: 6003274388656652091}
-  - component: {fileID: 6003274388656652095}
+  - component: {fileID: 8588512678325515417}
+  - component: {fileID: 6925903297953980289}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -87,6 +88,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -111,6 +114,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &6003274388656652091
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -125,7 +129,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6003274388656652095
+--- !u!114 &8588512678325515417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +138,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6003274388656652090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2487baf3381054940bbc4aa557547ac5, type: 3}
+  m_Script: {fileID: 11500000, guid: 033a12d83d589f845b2b593bf499a0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
@@ -144,4 +148,16 @@ MonoBehaviour:
   ammo: 0
   ammoReserves: 0
   firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 6003274388575573493}
+  bulletPrefab: {fileID: 0}
+--- !u!114 &6925903297953980289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6003274388656652090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc26fc9bd68ec743897d939cc68fe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
