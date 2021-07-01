@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
+    [SerializeField] Rigidbody rgbd;
+    [SerializeField] float projectileForce;
     // Variables needed for projectiles.
     [SerializeField] private protected float damage, lifeSpan;
     public GameObject shooter;
 
+    protected virtual void Start()
+    {
+        rgbd = GetComponent<Rigidbody>();
+
+        rgbd.AddForce(transform.forward * projectileForce);
+    }
     private void Update()
     {
         // If the lifespan timer is less than 0,
@@ -23,20 +31,13 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    // One collision with another object.
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        // If the object is tagged as a player
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.GetComponent<Health>() != null)
         {
-            // Send message to deal damage.
-            collision.gameObject.SendMessage("TakeDamage", damage);
+            other.gameObject.GetComponent<Health>().TakeDamage(damage);
         }
-        else
-        {
-            // Die.
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 
 }
