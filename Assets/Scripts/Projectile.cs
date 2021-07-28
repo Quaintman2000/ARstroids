@@ -33,7 +33,7 @@ public abstract class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Health>() != null)
+        if (other.gameObject.GetComponent<Health>() != null & other.gameObject != shooter)
         {
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
         }

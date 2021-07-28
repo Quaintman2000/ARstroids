@@ -40,6 +40,12 @@ public class Health : MonoBehaviour
             sheilds -= damageDealt;
         }
     }
+    public void Heal(float healthAmount)
+    {
+        healthAmount= Mathf.Clamp(healthAmount, 0, maxHealth);
+        health += healthAmount;
+        health = Mathf.Min(health, maxHealth);
+    }
 
     public void Die()
     {

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,14 +12,14 @@ public class Rocket : Projectile
     [SerializeField]
     float maxTurnSpeed = 5;
 
-    PlayerInputManager[] players = new PlayerInputManager[2];
+    Pawn[] players = new Pawn[2];
     protected override void Start()
     {
-        players = FindObjectsOfType<PlayerInputManager>();
+        players = FindObjectsOfType<Pawn>();
 
-        foreach(PlayerInputManager player in players)
+        foreach (Pawn player in players)
         {
-            if(player.gameObject != shooter)
+            if (player.gameObject != shooter)
             {
                 target = player.gameObject;
                 return;
@@ -30,13 +30,17 @@ public class Rocket : Projectile
     // Update is called once per frame
     void Update()
     {
-        FollowTarget(target.transform);
+        if (target != null)
+        {
+            FollowTarget(target.transform);
+        }
+        transform.position += transform.forward * maxVelocity * Time.deltaTime;
     }
 
     public void FollowTarget(Transform targetToFollow)
     {
         Vector3 vectorToTarget = targetToFollow.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget);
-        transform.rotation = Quaternion.RotateTowards(this.transform.rotation, targetRotation, maxTurnSpeed);
+        transform.rotation = Quaternion.RotateTowards(this.transform.rotation, targetRotation, maxTurnSpeed * Time.deltaTime);
     }
 }
