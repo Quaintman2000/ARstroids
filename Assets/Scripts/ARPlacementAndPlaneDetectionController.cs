@@ -7,10 +7,12 @@ public class ARPlacementAndPlaneDetectionController : MonoBehaviour
 {
     ARPlaneManager m_ARPlaneManager;
     ARPlacementManager m_ARPlacementManager;
+    
 
     public GameObject placeButton;
     public GameObject adjustButton;
     public GameObject startGameButton;
+    public GameObject scaleSlider;
     private void Awake()
     {
         m_ARPlaneManager = GetComponent<ARPlaneManager>();
@@ -20,6 +22,7 @@ public class ARPlacementAndPlaneDetectionController : MonoBehaviour
     void Start()
     {
         placeButton.SetActive(true);
+        scaleSlider.SetActive(true);
         adjustButton.SetActive(false);
         startGameButton.SetActive(false);
 
@@ -39,6 +42,7 @@ public class ARPlacementAndPlaneDetectionController : MonoBehaviour
         SetAllPanesActiveOrDeactive(false);
 
         placeButton.SetActive(false);
+        scaleSlider.SetActive(false);
         adjustButton.SetActive(true);
         startGameButton.SetActive(true);
 
@@ -52,6 +56,7 @@ public class ARPlacementAndPlaneDetectionController : MonoBehaviour
         SetAllPanesActiveOrDeactive(true);
 
         placeButton.SetActive(true);
+        scaleSlider.SetActive(true);
         adjustButton.SetActive(false);
         startGameButton.SetActive(false);
 
