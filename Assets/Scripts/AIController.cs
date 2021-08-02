@@ -12,6 +12,8 @@ public class AIController : MonoBehaviour
 
     public bool canAttack = false;
 
+    [SerializeField] bool callOnDestroy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,10 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(callOnDestroy)
+        {
+            Destroy(this.gameObject);
+        }
         if(currentState == aiState.Follow)
         {
             if (followTarget != null)
@@ -57,5 +63,10 @@ public class AIController : MonoBehaviour
         Vector3 vectorToTarget = targetToFollow.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget);
         transform.rotation = Quaternion.RotateTowards(this.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
+
+    void OnDestroy()
+    {
+        GameManager.Instance.spawnedEnemies.Remove(this);
     }
 }

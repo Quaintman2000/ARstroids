@@ -141,6 +141,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5769194975027785582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &410569601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410569603}
+  - component: {fileID: 410569602}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &410569602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410569601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30529ecac0fe94a488f3034e2a722d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameStart: 0
+  spawnedPickups: []
+  spawnedEnemies: []
+--- !u!4 &410569603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410569601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18734573, y: 5.249733, z: 0.12662914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &439424367
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -394,6 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1162468939}
+  - component: {fileID: 1162468940}
   m_Layer: 0
   m_Name: MAP
   m_TagString: Untagged
@@ -417,6 +464,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162468940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162468938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426c6c1cae7c82f48b80998161731ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7841687585987147415, guid: 68bdf7e0712323940a75ed834b6a4320, type: 3}
+  pickUpPrefabs:
+  - {fileID: 6602952733145621082, guid: 45e922b14e5263a4fbb6c5e16676ff41, type: 3}
+  - {fileID: 3962353380268316422, guid: 96c535f50ce70c64096fee3f215c408b, type: 3}
+  spawnDelay: 2
+  maxNumberOfPickupsInGame: 3
+  maxNumberOfEnemiesInGame: 3
 --- !u!1 &1178258974
 GameObject:
   m_ObjectHideFlags: 0
