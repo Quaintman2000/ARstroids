@@ -47,6 +47,18 @@ public class ARPlacementAndPlaneDetectionController : MonoBehaviour
         startGameButton.SetActive(true);
 
     }
+    public void DisableEverything()
+    {
+        m_ARPlaneManager.enabled = false;
+        m_ARPlacementManager.enabled = false;
+
+        SetAllPanesActiveOrDeactive(false);
+
+        placeButton.SetActive(false);
+        scaleSlider.SetActive(false);
+        adjustButton.SetActive(false);
+        startGameButton.SetActive(false);
+    }
 
     public void EnabledARPlacementAndPlaneDection()
     {
