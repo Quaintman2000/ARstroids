@@ -34,4 +34,9 @@ public class GameManager : MonoBehaviour
          spawnedEnemiesCount = spawnedEnemies.Count;
         spawnedPickupsCount = spawnedPickups.Count;
     }
+
+    public void StartGame(bool value)
+    {
+        isGameStart = value;
+    }
 }
